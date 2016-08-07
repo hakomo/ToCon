@@ -1,0 +1,157 @@
+﻿
+button {
+    padding: 0;
+    outline: 0;
+    border: 0;
+    background: transparent;
+    vertical-align: middle;
+    cursor: pointer;
+}
+button::-moz-focus-inner {
+    border: 0;
+}
+
+.clickdown {
+    position: relative;
+    display: inline;
+}
+.clickdown ul {
+    position: fixed;
+    z-index: 2;
+    display: none;
+    list-style: none;
+}
+.clickdown ul a {
+    display: inline-block;
+    margin-bottom: -1px;
+    padding-left: 8px;
+    background: #fff;
+    color: #000;
+    text-align: left;
+    text-decoration: none;
+    line-height: 28px;
+    font-size: 14px;
+}
+
+#container .clickdown ul a {
+    width: 72px;
+}
+#header .clickdown ul a {
+    width: 160px;
+}
+
+#category {
+    float: left;
+}
+#todo, #search {
+    float: right;
+}
+#todo:not(.selected), #search:not(.selected) {
+    display: none;
+}
+.todoes:not(.selected) {
+    display: none;
+}
+.category, .todo {
+    margin-bottom: -1px;
+}
+.category-name {
+    padding: 4px 0 4px 8px;
+    text-align: left;
+    word-break: break-all;
+}
+.do.complete {
+    width: 72px;
+    line-height: 32px;
+}
+.todo-name {
+    padding: 4px 0;
+    text-align: left;
+    word-break: break-all;
+}
+.todo div {
+    text-align: center;
+}
+.note {
+    outline: 0;
+    resize: none;
+    margin: 0 0 8px 0;
+}
+.detail {
+    text-align: center;
+    display: inline-block;
+    width: 32px;
+    line-height: 32px;
+    vertical-align: middle;
+}
+.config {
+    text-align: center;
+    display: inline-block;
+    width: 40px;
+    line-height: 40px;
+    vertical-align: middle;
+}
+.more {
+    margin-top: 9px;
+    color: #fff;
+    line-height: 40px;
+}
+
+#add-category, #add-todo {
+    margin-bottom: 8px;
+}
+#add-category input, #add-todo input {
+    height: 30px;
+}
+#add-category button, #add-todo button {
+    width: 33px;
+    height: 34px;
+    margin-left: -1px;
+}
+
+#wrap i {
+    margin-top: 4px;
+}
+#wrap .clickdown i {
+    margin-top: 5px;
+}
+
+.category .clickdown i, .todoes .clickdown i, #search .clickdown i {
+    opacity: 0.2;
+}
+/* #category .clickdown ul { */
+/*     top: 28px; */
+/*     right: -1px; */
+/* } */
+/* #todo .clickdown ul, #search .clickdown ul { */
+/*     top: 28px; */
+/*     right: -1px; */
+/* } */
+/* #header .clickdown ul { */
+/*     top: 32px; */
+/*     right: 0px; */
+/* } */
+
+.sb-form {
+    line-height: 28px;
+    padding: 8px;
+    margin-bottom: 8px;
+}
+.sb-category, .sb-order {
+    margin: 8px 8px 8px 0;
+}
+.sb-button, .sh-button {
+    width: 27px;
+    height: 28px;
+    margin-left: -1px;
+}
+.sh-search {
+    width: 160px;
+}
+.sh-form {
+    display: inline-block;
+    margin-top: 6px;
+}
+.sb-order {
+    width: 110px;
+}

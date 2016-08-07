@@ -1,0 +1,51 @@
+
+#header {
+    position: absolute;
+}
+
+hr {
+    border-top-color: hsl(180, 20%, 87%);
+}
+
+#twitter, #facebook, #hatena, #left {
+    float: left;
+}
+#right {
+    float: right;
+}
+#left {
+    margin-top: 32px;
+    font-size: 20px;
+    width: 396px;
+}
+#right {
+    margin-top: 32px;
+    width: 280px;
+}
+#atwitter, #afacebook {
+    font-size: 16px;
+    margin-bottom: 8px;
+    padding-left: 8px;
+    display: inline-block;
+    width: 240px;
+    line-height: 40px;
+    text-decoration: none;
+    color: #fff;
+}
+#atwitter {
+    margin-right: 40px;
+    background: hsl(180, 63%, 40%);
+}
+#afacebook {
+    background: hsl(220, 43%, 40%);
+}
+#social {
+    margin-top: 32px;
+}
+#left :link, #left :visited {
+    color: #117ec6;
+    text-decoration: none;
+}
+#left :link:hover {
+    text-decoration: underline;
+}

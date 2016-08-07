@@ -1,0 +1,92 @@
+
+<!doctype html>
+
+<meta charset='utf-8'>
+<meta name='robots' content='noindex'>
+
+<title>ToCon (トコン)</title>
+
+<link rel='stylesheet' href='css/html5-doctor-reset-stylesheet.min.css'>
+<link rel='stylesheet' href='css/bootstrap-icons.min.css'>
+<link rel='stylesheet' href='css/common.css'>
+<link rel='stylesheet' href='css/init.css'>
+<style>
+#footer, .more, #add-category button, #add-todo button, .sb-button, .sh-button {
+    background: hsl({val hue}, 40%, 40%);
+}
+input, select {
+    border: solid 1px hsl({val hue}, 40%, 40%);
+}
+.clickdown ul a:hover, .category, .todo, .sb-form {
+    background: hsl({val hue}, 20%, 97%);
+}
+textarea, .clickdown ul a, .category, .todo, .sb-form {
+    border: solid 1px hsl({val hue}, 20%, 87%);
+}
+<!-- .do.complete:hover, .todo-name:hover, #search .detail:hover, #todo .detail:hover, .category:not(.selected) .detail:hover, .category:not(.selected) .category-name:hover { -->
+<!--     background: hsl({val hue}, 40%, 92%); -->
+<!-- } -->
+#header, .category.selected, .category.hover {
+    background: hsl({val hue}, 40%, 87%);
+}
+#container, #header .wrap {
+    width: {val containerW}px;
+}
+#todo, #search, .more {
+    width: {val todoW}px;
+}
+.category-name, #add-category input {
+    width: {val categoryW}px;
+}
+#add-todo input, .sb-search {
+    width: 192px;
+}
+.todo-name {
+    width: {val todoNameW}px;
+}
+.note, sb-form {
+    width: {val noteW}px;
+}
+.sb-category {
+    width: {val sbCategoryW}px;
+}
+</style>
+
+<div id='wrap'>
+  <div id='header'>
+    <div class='wrap'>
+      <h1><a href='#'>ToCon<span style='font-size: 14px;'> beta </span>トコン</a></h1>
+      <form class='sh-form'>
+        <input class='sh-search' placeholder='検索' maxlength='90'><button class='sh-button'><i class='icon-search icon-white'></i></button>
+      </form><div class='clickdown'><a class='config' href='#'><i class='icon-cog'></i></a><ul><!--<li><a style='color: #ddd;' href='#'>エクスポート</a></li><li><a style='color: #ddd;' href='#'>完了ToDoを並び替える</a><li><a style='color: #ddd;' href='#'>完了ToDoを削除</a></li><li><a style='color: #ddd;' href='#'>ノートを隠す</a></li>--><li><a class='sh-order' href='#'>経過時間順の並び替え</a></li><li><a href='/signout.php'>ログアウト</a></li></ul></div>
+      </span>
+    </div>
+  </div>
+  <div id='container'>
+    <div id='category'>
+      <form id='add-category'><input placeholder='ToDoリスト' maxlength='90'><button><i class='icon-plus icon-white'></i></button></form>
+      <div class='wrap'>
+        <!--{each categories}--><div class='category'><input class='categoryId' type='hidden' value='{val categories/categoryId}'><button class='category-name'>{val categories/category}</button><div class='clickdown'><a class='detail' href='#'><i class='icon-cog'></i></a><ul><li><a class='edit-category' href='#'>編集</a></li><li><a class='delete-category' href='#'>削除</a></li></ul></div></div><!--{/each}-->
+      </div>
+    </div>
+    <div id='todo'>
+      <form id='add-todo'><input placeholder='ToDo' maxlength='90'><button><i class='icon-plus icon-white'></i></button></form>
+      <!--{each categories}--><div class='todoes'><input class='categoryId' type='hidden' value='{val categories/categoryId}'><div class='wrap'></div>{val categories/more}</div><!--{/each}-->
+    </div>
+    <div id='search'>
+      <form class='sb-form'>検索と並び替え<br><select class='sb-category'><option value='-1'>ALL</option><!--{each categories}--><option value='{val categories/categoryId}'>{val categories/category}</option><!--{/each}--></select><select class='sb-order'><option value='category'>リスト順</option><option value='time'>経過時間順</option></select><br><input class='sb-search' placeholder='検索' maxlength='90'><button class='sb-button'><i class='icon-search icon-white'></i></button></form>
+      <div class='wrap'></div>
+    </div>
+    <div style='clear: both;'></div>
+  </div>
+</div>
+<div id='footer'>
+  <div class='wrap'><a href='/'>ホーム</a><a href='/about'>ToConについて</a><a href='mailto:contact@tocon.info'>お問い合わせ</a><a href='/privacy'>プライバシー</a><div>(C) 2013 ToCon</div></div>
+</div>
+
+<input id='sessionId' type='hidden' value='{val sessionId}'>
+
+<script src='//code.jquery.com/jquery-2.0.3.min.js'></script>
+<script src='//code.jquery.com/ui/1.10.3/jquery-ui.min.js'></script>
+<script src='/js/jquery.blockUI.js'></script>
+<script src='/js/init.js'></script>
